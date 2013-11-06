@@ -1,0 +1,500 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+<title>**001** 如何从一个文件(数据流,变量)一行一行(或者一个字段一个字段)的读取呢？</title>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[['$$$','$$$']]}});</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<h1><strong>001</strong> 如何从一个文件(数据流,变量)一行一行(或者一个字段一个字段)的读取呢？</h1>
+
+<p><a href="Why-you-dont-read-lines-with-for.html">为什么在bash下读取文件行不用 <code>for</code></a> 。使用<code>while</code>循环和<code>read</code> 命令来完成：</p>
+
+<pre><code>$  while IFS= read -r line; do
+       printf '%s\n' "$line"
+   done &lt;"$file"
+</code></pre>
+
+<p>read -r 选项的是阻止转义的(\或者\n这种)。如果不加<code>-r</code>那么所有的<code>\</code>都给你丢弃了，所以使用<code>read</code>的一个最佳实践就是加上<code>-r</code>选项。</p>
+
+<p>不过你要是想拥有下面脚本中<a href="#Trimming">去除开头和结尾的空白</a>的效果，那你就得把<code>-r</code>去掉了。</p>
+
+<blockquote><p><code>line</code> 在这里是一个变量名，当然你可以换一个你喜欢的名字替换<code>line</code></p></blockquote>
+
+<p><code>&lt;"$file"</code> 告诉<code>while</code>循环要从变量<code>$file</code>中所代表的文件读取内容，当然你可以直接写一个文件的路径+文件名也是可以的。如果你的脚本就是要读取标准输入，那你就用不到重定向了。</p>
+
+<p>如果你的输入源是一个变量或者参数的值，那么BASH就会使用叫<code>here string</code>的遍历里面的每一行:</p>
+
+<pre><code>    while read -r line; do
+      printf '%s\n' "$line"
+    done &lt;&lt;&lt; "$var"
+</code></pre>
+
+<p>这同样也可以利用Bourne-type shell的<code>here document</code>实现同样的效果(虽然<code>read -r</code>是posix标准，而不是BASH的)：</p>
+
+<pre><code>    while read -r line; do
+      printf '%s\n' "$line"
+    done &lt;&lt;EOF
+$var
+EOF
+</code></pre>
+
+<p>你也可以使用下面的循环来排除以注释<code>#</code>开头的行：</p>
+
+<pre><code>    # Bash
+    while read -r line; do
+      [[ $line = \#* ]] &amp;&amp; continue
+      printf '%s\n' "$line"
+    done &lt; "$file"
+</code></pre>
+
+<p>如果你像处理每一行的各个字段，那么你就得使用多个<code>read</code> 变量了:</p>
+
+<pre><code>    # Input file has 3 columns separated by white space.
+    while read -r first_name last_name phone; do
+      # Only print the last name (second column)
+      printf '%s\n' "$last_name"
+    done &lt; "$file"
+</code></pre>
+
+<p>如果字段分隔符不是空白符，那么你就要设置<code>IFS</code><a href="BASH-IFS.html">内部字段分割器</a>了:</p>
+
+<pre><code>    # Extract the username and its shell from /etc/passwd:
+    while IFS=: read -r user pass uid gid gecos home shell; do
+      printf '%s: %s\n' "$user" "$shell"
+    done &lt; /etc/passwd
+</code></pre>
+
+<p>如果是<code>tab</code> 就设置<code>IFS=$'\t'</code>。</p>
+
+<p>你也没必要知道输入的行里面又多少个字段。如果你给的变量数比字段数多，那多余的变量的值就是空，反过来，给的变量比字段数少，那么最后一个变量将包含所有剩下的值:</p>
+
+<pre><code>  read -r first last junk &lt;&lt;&lt; 'Bob Smith 123 Main Street Elk Grove Iowa 123-555-6789'
+
+    # first will contain "Bob", and last will contain "Smith".
+    # junk holds everything else.
+</code></pre>
+
+<p>有些人也使用一次性变量<code>_</code>来保存那些"垃圾值"（那些忽略的字段）。如果我们不在意那些字段的值跑哪儿去的话，一次性变量也可以一个<code>read</code>命令中多次使用:</p>
+
+<pre><code>    read -r _ _ first middle last _ &lt;&lt;&lt; "$record"
+
+    # We skip the first two fields, then read the next three.
+    # Remember, the final _ can absorb any number of fields.
+    # It doesn't need to be repeated there.
+</code></pre>
+
+<p><strong><code>read</code></strong>命令是一行一行的处理数据。默认它会<a href="bashfaq-067.html">去掉行开始和结尾的空白</a>.如果你不想这样，那么你就得把<code>IFS</code>清空：</p>
+
+<pre><code>   # Exact lines, no trimming
+    while IFS= read -r line; do
+      printf '%s\n' "$line"
+    done &lt; "$file"
+</code></pre>
+
+<p>有时候输入是来自于一些命令而不是文件：</p>
+
+<pre><code>    some command | while read -r line; do
+      printf '%s\n' "$line"
+    done
+</code></pre>
+
+<p>这种方法对于使用一串命令处理<a href="BASH-find.html"><code>find</code></a>查找的结果特别有用:</p>
+
+<pre><code>   find . -type f -print0 | while IFS= read -r -d '' file; do
+        mv "$file" "${file// /_}"
+    done
+</code></pre>
+
+<p>上面的脚本从<code>find</code>命令一次获取一个文件名，然后使用<code>_</code>来替换空白<a href="bashfaq-030.html">重命名文件名</a>.</p>
+
+<p>请注意<code>find</code>命令的<code>-print0</code>,它使用<a href="http://zh.wikipedia.org/wiki/%E7%A9%BA%E5%AD%97%E7%AC%A6"><code>NUL byte</code></a>作为文件名的分隔符。而<code>read</code>命令的<code>-d ''</code>说明会把所有内容都读到<code>file</code>变量中，直到遇到<code>NUL byte</code>.默认情况下，<code>find</code>和<code>read</code>规定都是换行符结尾。然而，如果文件名中有换行符的话，那么这个默认行为就会把文件名分割掉从而导致错误的发生。除此之外，很有必要把<code>IFS</code>清空，因为<code>read</code>会把开头和结尾的空格去掉。SEE<a href="bashfaq-020.html">FAQ20</a>.</p>
+
+<p>把<code>find</code>的结果通过管道输入到<code>while</code>循环中把循环放到<a href="BASH-SubShell.html"><code>SubShell</code></a>中，and may therefore cause problems later on if the commands inside the body of the loop attempt to set variables which need to be used after the loop;在这种情况下，请看<a href="bashfaq24.html">FAQ24</a>或者<a href="BASH-ProcessSubstitution.html">进程替换</a>.</p>
+
+<pre><code>    while read -r line; do
+      printf '%s\n' "$line"
+    done &lt; &lt;(some command)
+</code></pre>
+
+<p>如果你想把从文件读取的字段保存到<a href="bashfaq-005.html">数组</a>,请看<a href="bashfaq-005.html">FAQ005</a>.</p>
+
+<h2><em>我的文件坏了，缺少最后一个换行</em></h2>
+
+<p>如果一个文件的最后一行不是换行符，那么<code>read</code>命令也会读取它，但是会返回错误并把不是换行的那部分丢给read的变量。你可以在循环之后这样处理：</p>
+
+<pre><code>    # Emulate cat
+    while IFS= read -r line; do
+      printf '%s\n' "$line"
+    done &lt; "$file"
+    [[ -n $line ]] &amp;&amp; printf %s "$line"
+</code></pre>
+
+<p>或者:</p>
+
+<pre><code> # This does not work:
+    printf 'line 1\ntruncated line 2' | while read -r line; do echo $line; done
+
+    # This does not work either:
+    printf 'line 1\ntruncated line 2' | while read -r line; do echo "$line"; done; [[ $line ]] &amp;&amp; echo -n "$line"
+
+    # This works:
+    printf 'line 1\ntruncated line 2' | { while read -r line; do echo "$line"; done; [[ $line ]] &amp;&amp; echo "$line"; }
+</code></pre>
+
+<p>在上面的第一个例子中，循环后的测试不仅没有换行符，也没有了双引号，请看<a href="BASH-Quotes.html">Quotes</a>或者<a href="BASH-Arguments.html">Arguments</a>.</p>
+
+<p>关于上面第二个例子中为啥没有按照预料中得起作用，请看<a href="bashfaq-024.html">FAQ24</a>.</p>
+
+<p>另外，你也通过简单的给<code>while</code>循环加一个<code>or</code>的逻辑：</p>
+
+<pre><code>while IFS= read -r line || [[ $line ]]; do
+      printf '%s\n' "$line"
+    done &lt; "$file"
+
+    printf 'line 1\ntruncated line 2' | while read -r line || [[ $line ]]; do echo "$line"; done
+</code></pre>
+
+<h3>如何避免其他命令把输入都吃了</h3>
+
+<p>有些命令会把所有的来自标准输入都吃光。下面的这个程序就是对此没有防范的例子:</p>
+
+<pre><code>    while read -r line; do
+      cat &gt; ignoredfile
+      printf '%s\n' "$line"
+    done &lt; "$file"
+</code></pre>
+
+<p>上面的结果只会把第一行打印出来，其余的都到了ignoredfile中了。<code>cat</code>啜食了所有可用的输入。</p>
+
+<p>一个解决方法就是使用<a href="BASH-FileDescriptor.html">文件描述符</a>而不是标准输入。</p>
+
+<pre><code>   # Bash
+    while read -r -u 9 line; do
+      cat &gt; ignoredfile
+      printf '%s\n' "$line"
+    done 9&lt; "$file"
+
+    # Note that read -u is not portable, and pretty much useless when you can use simple redirections instead:
+    while read -r line &lt;&amp;9; do
+      cat &gt; ignoredfile
+      printf '%s\n' "$line"
+    done 9&lt; "$file"
+</code></pre>
+
+<p>或者：</p>
+
+<pre><code>    # Bourne
+    exec 9&lt; "$file"
+    while read -r line &lt;&amp;9; do
+      cat &gt; ignoredfile
+      printf '%s\n' "$line"
+    done
+    exec 9&lt;&amp;-
+</code></pre>
+
+<p>上面的例子会等待用户输入一些东西在每一次迭代中，而不是把每一行都吃掉。</p>
+
+<p>You might need this, for example, with mencoder which will accept user input if there is any, but will continue silently if there isn't. Other commands that act this way include ssh and ffmpeg.其它的解决方案将会在<a href="bashfaq-089.html">FAQ89</a>中讨论。</p>
+</body>
+</html>
