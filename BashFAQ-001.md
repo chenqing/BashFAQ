@@ -1,4 +1,4 @@
-#**001** 如何从一个文件(数据流,变量)一行一行(或者一个字段一个字段)的读取呢？ 
+#BashFaq-001: 如何从一个文件(数据流,变量)一行一行(或者一个字段一个字段)的读取 
 
 [为什么在bash下读取文件行不用 `for`](Why-you-dont-read-lines-with-for.html) 。使用`while`循环和`read` 命令来完成：
 
@@ -186,7 +186,7 @@ while IFS= read -r line || [[ $line ]]; do
       printf '%s\n' "$line"
     done 9< "$file"
 
-    # Note that read -u is not portable, and pretty much useless when you can use simple redirections instead:
+    # Note that read -u is not portable(可移植), and pretty much useless when you can use simple redirections instead:
     while read -r line <&9; do
       cat > ignoredfile
       printf '%s\n' "$line"
